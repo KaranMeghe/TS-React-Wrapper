@@ -1,5 +1,8 @@
-import { Button, Input } from "./Components";
+import { Button, Container, Input } from "./Components";
 function App() {
+  const handleClick = (): void => {
+    console.log("Hello");
+  };
   return (
     <>
       <h1>Let's get started!</h1>
@@ -13,7 +16,14 @@ function App() {
         click this link
       </Button>
       <br /> <br />
-      <Button className="button">submit button</Button>
+      <Button className="button">submit button</Button> <br /> <br />
+      <Container as={Button} className="button" onClick={handleClick}>
+        Polymorphic Component
+      </Container>
+      <br /> <br />
+      <Container as={"a"} href="https://www.google.com" target="_blank">
+        click me
+      </Container>
     </>
   );
 }
